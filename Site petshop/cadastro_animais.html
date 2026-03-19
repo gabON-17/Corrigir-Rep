@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+               <meta charset="UTF-8">
+	           <meta name="author" content="Wanderley Lopes Batista">    
+               <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+			   
+    <link rel="stylesheet" href="css/estilo_petshop.css">
+    <script src="js/petshop.js"></script>
+
+</head>
+<body>
+
+    <h2>CADASTRO DE ANIMAIS</h2>
+
+    <ul class="menu">
+        <li><a href="conteudo.html" target="principal">PÁGINA INICIAL</a></li>
+        <li><a href="cadastro_animais.html" target="principal">CADASTRO DE ANIMAIS</a></li>
+    </ul>
+
+    <fieldset>
+        <legend><strong>DADOS DO PET</strong></legend>
+
+        <form onsubmit="cadastrarPet(); return false;">
+
+            <label><strong>Nome do Animal:</strong></label><br>
+            <input type="text" id="nome" style="width: 98%; padding: 10px;" required><br><br>
+
+            <label><strong>Espécie:</strong></label><br>
+            <select id="especie">
+                <option>Cachorro</option>
+                <option>Gato</option>
+                <option>Pássaro</option>
+                <option>Coelho</option>
+                <option>Hamster</option>
+                <option>Tartaruga</option>
+                <option>Peixe</option>
+                <option>Porquinho-da-Índia</option>
+                <option>Outro</option>
+            </select><br><br>
+
+            <label><strong>Sexo:</strong></label><br>
+            <input type="radio" name="sexo" value="Macho"> Macho
+            <input type="radio" name="sexo" value="Fêmea"> Fêmea<br><br>
+
+            <label><strong>Serviços:</strong></label><br>
+            <input type="checkbox" class="serv" value="Banho"> Banho
+            <input type="checkbox" class="serv" value="Tosa"> Tosa
+            <input type="checkbox" class="serv" value="Consulta"> Consulta Veterinária
+            <input type="checkbox" class="serv" value="Vacinacao"> Vacinação
+            <input type="checkbox" class="serv" value="Hospedagem"> Hospedagem<br><br>
+            
+            <label><strong>Data:</strong></label><br>
+            <input type="date" id="data"><br><br>
+
+            <input type="submit" value="CADASTRAR PET" style="padding: 10px 20px; cursor: pointer;">
+        </form>
+    </fieldset>
+
+    <div id="resultado" style="margin-top: 20px; min-height: 50px;"></div>
+	
+<!-- Rodapé da página -->
+        <footer>
+            <div class="rodape-baixo">
+                <p>© 2026 Pets Teuz BH — Feito para fins Educacionais</p>
+                <span>“O cuidado que seu melhor amigo merece."</span>
+            </div>
+        </footer>
+
+</body>
+</html>
