@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Wanderley Lopes Batista" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilo_petshop.css" />
+    <title>Comprovante do Pet</title>
+  </head>
+  <body>
+    <div id="resultado"></div>
+
+    <script>
+      const id = Number(localStorage.getItem("id_atual")) - 1;
+      const animal = JSON.parse(localStorage.getItem(`animal_${id}`));
+
+      let nomePet = animal.name || "Não informado";
+      let especiePet = animal.especie || "Não informado";
+      let sexoPet = animal.sex || "Não informado";
+      let listaServicos = animal.servicesList || "Nenhum";
+      let dataPet = animal.date || "Não informado";
+
+      let areaResultado = document.getElementById("resultado");
+      console.log(nomePet);
+      areaResultado.innerHTML = `
+            <div class="comprovante">
+                <h3 class="titulo-comprovante">DADOS DO PET CADASTRADO</h3>
+                <hr>
+                <p><strong>Nome:</strong> ${nomePet}</p>
+                <p><strong>Espécie:</strong> ${especiePet}</p>
+                <p><strong>Sexo:</strong> ${sexoPet}</p>
+                <p><strong>Serviços:</strong> ${listaServicos}</p>
+                <p><strong>Data:</strong> ${dataPet}</p>
+                <button onclick="window.print()" class="botao-imprimir">Imprimir Comprovante</button>
+            </div>
+        `;
+    </script>
+  </body>
+</html>
