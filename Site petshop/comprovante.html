@@ -1,26 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Wanderley Lopes Batista">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo_petshop.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Wanderley Lopes Batista" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilo_petshop.css" />
     <title>Comprovante do Pet</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="resultado"></div>
 
     <script>
-        let nomePet = localStorage.getItem("nomePet") || "Não informado";
-        let especiePet = localStorage.getItem("especiePet") || "Não informado";
-        let sexoPet = localStorage.getItem("sexoPet") || "Não informado";
-        let listaServicos = localStorage.getItem("listaServicos") || "Nenhum";
-        let dataPet = localStorage.getItem("dataPet") || "Não informado";
+      const id = Number(localStorage.getItem("id_atual")) - 1;
+      const animal = JSON.parse(localStorage.getItem(`animal_${id}`));
 
-        let areaResultado = document.getElementById("resultado");
+      let nomePet = animal.name || "Não informado";
+      let especiePet = animal.especie || "Não informado";
+      let sexoPet = animal.sex || "Não informado";
+      let listaServicos = animal.servicesList || "Nenhum";
+      let dataPet = animal.date || "Não informado";
 
-        areaResultado.innerHTML = `
+      let areaResultado = document.getElementById("resultado");
+      console.log(nomePet);
+      areaResultado.innerHTML = `
             <div class="comprovante">
                 <h3 class="titulo-comprovante">DADOS DO PET CADASTRADO</h3>
                 <hr>
@@ -33,6 +35,5 @@
             </div>
         `;
     </script>
-
-</body>
+  </body>
 </html>
